@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './msgAlert.css';
 function MsgAlert (Msg) {
   return class MsgAlert extends Component {
+    static displayName = `MsgAlert(${getDisplayName(Msg)})`
     constructor() {
       super();
       this.state = {
@@ -33,4 +34,8 @@ function MsgAlert (Msg) {
     }
   }
 }
+
+function getDisplayName(Msg){
+  return Msg.displayName|| Msg.name;
+};
 export default MsgAlert;
